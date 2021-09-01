@@ -79,9 +79,8 @@ func main() {
 			if battStatus == 2 && battryInt >= 98 { // If charging and Battery is more thatn 98
 				lastNotiTime := int(time.Since(lastNoti)) / 1000000000
 				if lastNotiTime > 120 {
-					fmt.Println(battStatus, BatteryStatus[battStatus], battryInt, idleTimeData, lastNotiTime)
 					beeep.Alert("Battery Status: "+BatteryStatus[battStatus], "Charging Complete", "asset.png")
-					fmt.Println(battStatus, BatteryStatus[battStatus], battryInt, idleTimeData)
+					fmt.Println(battStatus, BatteryStatus[battStatus], battryInt, idleTimeData, lastNotiTime)
 					lastNoti = time.Now()
 				}
 			}
